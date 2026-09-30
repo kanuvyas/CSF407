@@ -1,0 +1,31 @@
+First-order model: sum_v P(v | w) for each context w
+  <START>    1.000000  OK
+  cat        1.000000  OK
+  dog        1.000000  OK
+  mat        1.000000  OK
+  on         1.000000  OK
+  park       1.000000  OK
+  ran        1.000000  OK
+  rug        1.000000  OK
+  sat        1.000000  OK
+  the        1.000000  OK
+  to         1.000000  OK
+
+Second-order model: sum_v P(v | a, b) for each observed context (a, b)
+  (<START>, <START>)     1.000000  OK
+  (<START>, the)         1.000000  OK
+  (cat, ran)             1.000000  OK
+  (cat, sat)             1.000000  OK
+  (dog, ran)             1.000000  OK
+  (dog, sat)             1.000000  OK
+  (on, the)              1.000000  OK
+  (ran, to)              1.000000  OK
+  (sat, on)              1.000000  OK
+  (the, cat)             1.000000  OK
+  (the, dog)             1.000000  OK
+  (the, mat)             1.000000  OK
+  (the, park)            1.000000  OK
+  (the, rug)             1.000000  OK
+  (to, the)              1.000000  OK
+
+All distributions normalised: True

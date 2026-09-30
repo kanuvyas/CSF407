@@ -1,0 +1,54 @@
+test_correct_models_pass_both_checks (__main__.TestBugDetection.test_correct_models_pass_both_checks) ... ok
+test_missing_end_transitions_are_caught (__main__.TestBugDetection.test_missing_end_transitions_are_caught) ... ok
+test_single_start_pad_is_caught_by_hand_values (__main__.TestBugDetection.test_single_start_pad_is_caught_by_hand_values) ... ok
+test_uniform_sampler_is_caught_by_frequency_test (__main__.TestBugDetection.test_uniform_sampler_is_caught_by_frequency_test) ... ok
+test_wrong_denominator_is_caught (__main__.TestBugDetection.test_wrong_denominator_is_caught) ... ok
+test_wrong_denominator_is_invisible_to_sampling (__main__.TestBugDetection.test_wrong_denominator_is_invisible_to_sampling) ... ok
+test_first_order_total_mass_approaches_one_from_below (__main__.TestChainRule.test_first_order_total_mass_approaches_one_from_below) ... ok
+test_second_order_gives_zero_to_unseen_combinations (__main__.TestChainRule.test_second_order_gives_zero_to_unseen_combinations) ... ok
+test_second_order_total_mass_is_exactly_one (__main__.TestChainRule.test_second_order_total_mass_is_exactly_one) ... ok
+test_sentence_frequencies_follow_the_chain_rule (__main__.TestChainRule.test_sentence_frequencies_follow_the_chain_rule) ... ok
+test_sentence_probability_first_order_by_hand (__main__.TestChainRule.test_sentence_probability_first_order_by_hand) ... ok
+test_sentence_probability_second_order_by_hand (__main__.TestChainRule.test_sentence_probability_second_order_by_hand) ... ok
+test_counts_independent_of_sentence_order (__main__.TestCounts.test_counts_independent_of_sentence_order) ... ok
+test_first_order_total_transitions (__main__.TestCounts.test_first_order_total_transitions) ... ok
+test_handout_example_three_cat_two_dog (__main__.TestCounts.test_handout_example_three_cat_two_dog) ... ok
+test_refit_replaces_old_counts (__main__.TestCounts.test_refit_replaces_old_counts) ... ok
+test_second_order_total_triples (__main__.TestCounts.test_second_order_total_triples) ... ok
+test_selected_first_order_counts (__main__.TestCounts.test_selected_first_order_counts) ... ok
+test_six_sentences_all_lowercase (__main__.TestData.test_six_sentences_all_lowercase) ... ok
+test_special_tokens_not_in_raw_data (__main__.TestData.test_special_tokens_not_in_raw_data) ... ok
+test_uppercase_input_is_lowercased (__main__.TestData.test_uppercase_input_is_lowercased) ... ok
+test_vocabulary_is_ten_words (__main__.TestData.test_vocabulary_is_ten_words) ... ok
+test_pair_counts_agree (__main__.TestModelRelationship.test_pair_counts_agree) ... ok
+test_parameter_counts (__main__.TestModelRelationship.test_parameter_counts) ... ok
+test_second_order_support_is_inside_first_order_support (__main__.TestModelRelationship.test_second_order_support_is_inside_first_order_support) ... ok
+test_unobserved_contexts (__main__.TestModelRelationship.test_unobserved_contexts) ... ok
+test_end_is_never_a_context (__main__.TestNormalisation.test_end_is_never_a_context) ... ok
+test_every_probability_in_unit_interval (__main__.TestNormalisation.test_every_probability_in_unit_interval) ... ok
+test_first_order_rows_sum_to_one (__main__.TestNormalisation.test_first_order_rows_sum_to_one) ... ok
+test_number_of_rows (__main__.TestNormalisation.test_number_of_rows) ... ok
+test_second_order_rows_sum_to_one (__main__.TestNormalisation.test_second_order_rows_sum_to_one) ... ok
+test_argmax_first_order (__main__.TestPrediction.test_argmax_first_order) ... ok
+test_lookup_does_not_add_rows (__main__.TestPrediction.test_lookup_does_not_add_rows) ... ok
+test_more_context_changes_the_prediction (__main__.TestPrediction.test_more_context_changes_the_prediction) ... ok
+test_tie_is_broken_alphabetically (__main__.TestPrediction.test_tie_is_broken_alphabetically) ... ok
+test_unseen_context_does_not_crash (__main__.TestPrediction.test_unseen_context_does_not_crash) ... ok
+test_unseen_word_in_sentence_gives_minus_infinity (__main__.TestPrediction.test_unseen_word_in_sentence_gives_minus_infinity) ... ok
+test_zero_probability_transitions (__main__.TestPrediction.test_zero_probability_transitions) ... ok
+test_different_seeds_give_variety (__main__.TestSampling.test_different_seeds_give_variety) ... ok
+test_first_order_invents_new_sentences (__main__.TestSampling.test_first_order_invents_new_sentences) ... ok
+test_first_order_sampling_matches_cpt_for_several_contexts (__main__.TestSampling.test_first_order_sampling_matches_cpt_for_several_contexts) ... ok
+test_generated_text_has_no_special_tokens (__main__.TestSampling.test_generated_text_has_no_special_tokens) ... ok
+test_greedy_is_deterministic_and_ignores_rng (__main__.TestSampling.test_greedy_is_deterministic_and_ignores_rng) ... ok
+test_greedy_outputs (__main__.TestSampling.test_greedy_outputs) ... ok
+test_max_len_is_respected (__main__.TestSampling.test_max_len_is_respected) ... ok
+test_same_seed_same_sentences (__main__.TestSampling.test_same_seed_same_sentences) ... ok
+test_sampling_never_returns_a_zero_probability_word (__main__.TestSampling.test_sampling_never_returns_a_zero_probability_word) ... ok
+test_second_order_only_reproduces_training_sentences (__main__.TestSampling.test_second_order_only_reproduces_training_sentences) ... ok
+test_second_order_sampling_matches_cpt (__main__.TestSampling.test_second_order_sampling_matches_cpt) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 1.323s
+
+OK

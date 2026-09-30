@@ -1,0 +1,48 @@
+First-order next-word predictions
+
+P(X_t+1 | X_t = <START>): the: 1.000
+   argmax -> the
+
+P(X_t+1 | X_t = the): cat: 0.250, dog: 0.250, mat: 0.167, park: 0.167, rug: 0.167
+   argmax -> cat
+
+P(X_t+1 | X_t = cat): ran: 0.333, sat: 0.667
+   argmax -> sat
+
+P(X_t+1 | X_t = dog): ran: 0.333, sat: 0.667
+   argmax -> sat
+
+P(X_t+1 | X_t = sat): on: 1.000
+   argmax -> on
+
+P(X_t+1 | X_t = ran): to: 1.000
+   argmax -> to
+
+P(X_t+1 | X_t = on): the: 1.000
+   argmax -> the
+
+P(X_t+1 | X_t = to): the: 1.000
+   argmax -> the
+
+Second-order next-word predictions
+
+P(X_t | <START>, <START>): the: 1.000
+   argmax -> the
+
+P(X_t | <START>, the): cat: 0.500, dog: 0.500
+   argmax -> cat
+
+P(X_t | the, cat): ran: 0.333, sat: 0.667
+   argmax -> sat
+
+P(X_t | the, dog): ran: 0.333, sat: 0.667
+   argmax -> sat
+
+P(X_t | on, the): mat: 0.500, rug: 0.500
+   argmax -> mat
+
+P(X_t | to, the): park: 1.000
+   argmax -> park
+
+P(X_t | cat, ran): to: 1.000
+   argmax -> to

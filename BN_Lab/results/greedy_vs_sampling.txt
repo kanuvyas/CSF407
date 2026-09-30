@@ -1,0 +1,27 @@
+== First-order model ==
+Mode A (greedy, 5 sentences):
+  the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on   [hit max length, never emitted <END>]
+  the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on   [hit max length, never emitted <END>]
+  the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on   [hit max length, never emitted <END>]
+  the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on   [hit max length, never emitted <END>]
+  the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on   [hit max length, never emitted <END>]
+Mode B (sampling, 5 sentences):
+  the cat ran to the park
+  the dog ran to the cat ran to the cat sat on the park
+  the cat sat on the cat sat on the park
+  the dog sat on the rug
+  the cat ran to the cat ran to the dog sat on the rug
+
+== Second-order model ==
+Mode A (greedy, 5 sentences):
+  the cat sat on the mat
+  the cat sat on the mat
+  the cat sat on the mat
+  the cat sat on the mat
+  the cat sat on the mat
+Mode B (sampling, 5 sentences):
+  the cat ran to the park
+  the cat ran to the park
+  the dog ran to the park
+  the cat ran to the park
+  the dog sat on the rug
