@@ -1,0 +1,34 @@
+hidden units = 2, hidden act = tanh, SGD lr = 0.5, 5000 steps, seed 0
+shape of final weight matrix W2 : (3, 2) (3 classes x 2 hidden units)
+logits per example              : 3
+initial loss / final loss       : 1.5001 / 0.000499
+
+input   -> class probabilities [P(0), P(1), P(2)]   predicted  target
+[0, 0] -> [0.9995, 0.0005, 0.0]   0          0
+[0, 1] -> [0.0002, 0.9996, 0.0002]   1          1
+[1, 0] -> [0.0002, 0.9996, 0.0002]   1          1
+[1, 1] -> [0.0, 0.0006, 0.9994]   2          2
+all 4 correct: True
+
+Example [0, 1]: logits = [-3.6417737007141113, 4.774743556976318, -3.7335798740386963]
+softmax vector      : [0.0002210901293437928, 0.9995772242546082, 0.0002016964863287285]
+sum of components   : 1.0
+softmax(z + 100)    : [0.00022108970733825117, 0.9995772242546082, 0.0002016964863287285]
+max |difference|    : 4.220055416226387e-10
+
+float32 exp() overflows above ~88.7, so the naive formula breaks for large logits:
+naive  softmax(z+100) : [nan, nan, nan]
+stable softmax(z+100) : [0.00022108970733825117, 0.9995772242546082, 0.0002016964863287285]
+stable softmax(z+1000): [0.00022109308338258415, 0.9995772242546082, 0.00020170111383777112]
+
+autograd dL/dlogits (sum-reduced):
+ tensor([[-5.4771e-04,  5.4749e-04,  2.4472e-07],
+        [ 2.2109e-04, -4.2278e-04,  2.0170e-04],
+        [ 2.2099e-04, -4.2278e-04,  2.0170e-04],
+        [ 2.8075e-07,  6.0047e-04, -6.0081e-04]])
+p - y:
+ tensor([[-5.4771e-04,  5.4749e-04,  2.4472e-07],
+        [ 2.2109e-04, -4.2278e-04,  2.0170e-04],
+        [ 2.2099e-04, -4.2278e-04,  2.0170e-04],
+        [ 2.8075e-07,  6.0047e-04, -6.0081e-04]])
+max |autograd - (p - y)| = 1.1641532182693481e-10

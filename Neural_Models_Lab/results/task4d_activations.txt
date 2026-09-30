@@ -1,0 +1,40 @@
+
+==================== seed 0 (identical initial weights for all three) ====================
+act      | final loss | 4/4 correct | ||dL/dW1|| step0 | ||dL/dW1|| step10
+sigmoid  |    0.00247 | True        | 0.07658        | 0.01676
+tanh     |    0.00062 | True        | 0.33899        | 0.09064
+relu     |    0.34663 | False       | 0.27049        | 0.10950
+-- diagnosis at INITIALISATION (this is where the early gradient is measured) --
+  sigmoid : mean local derivative per unit: [0.2346, 0.2445] (max possible 0.25)
+  tanh    : mean local derivative per unit: [0.8049, 0.9191] (max possible 1.0)
+  relu    : pre-act per unit (min,max): [(-0.06, 0.83), (-0.29, 0.5)]; dead-on-all-inputs: [False, False]
+-- diagnosis after training --
+  sigmoid : mean local derivative per unit: [0.0199, 0.0201] (max possible 0.25)
+            probabilities [0.002, 0.998, 0.997, 0.002]
+  tanh    : mean local derivative per unit: [0.0989, 0.0417] (max possible 1.0)
+            probabilities [0.001, 1.0, 1.0, 0.001]
+  relu    : pre-act per unit (min,max): [(-1.88, 2.58), (-3.28, 2.55)]; dead-on-all-inputs: [False, False]
+            probabilities [0.5, 1.0, 0.5, 0.0]
+
+==================== seed 27 (identical initial weights for all three) ====================
+act      | final loss | 4/4 correct | ||dL/dW1|| step0 | ||dL/dW1|| step10
+sigmoid  |    0.00395 | True        | 0.00836        | 0.00253
+tanh     |    0.00062 | True        | 0.04215        | 0.02638
+relu     |    0.00028 | True        | 0.06939        | 0.05109
+-- diagnosis at INITIALISATION (this is where the early gradient is measured) --
+  sigmoid : mean local derivative per unit: [0.2371, 0.2193] (max possible 0.25)
+  tanh    : mean local derivative per unit: [0.8254, 0.6815] (max possible 1.0)
+  relu    : pre-act per unit (min,max): [(-0.73, 0.34), (-0.14, 1.15)]; dead-on-all-inputs: [False, False]
+-- diagnosis after training --
+  sigmoid : mean local derivative per unit: [0.0149, 0.0125] (max possible 0.25)
+            probabilities [0.003, 0.995, 0.995, 0.003]
+  tanh    : mean local derivative per unit: [0.0515, 0.047] (max possible 1.0)
+            probabilities [0.0, 0.999, 0.999, 0.0]
+  relu    : pre-act per unit (min,max): [(-3.55, 3.54), (-3.54, 3.54)]; dead-on-all-inputs: [False, False]
+            probabilities [0.0, 1.0, 1.0, 0.0]
+
+==================== 40 seeds, same protocol ====================
+act      | success | median final loss | median ||dL/dW1|| step0 | median ||dL/dW1|| step10
+sigmoid  | 30/40   | 0.00214           | 0.02121                 | 0.00610
+tanh     | 15/40   | 0.34684           | 0.05982                 | 0.04122
+relu     |  8/40   | 0.47740           | 0.09995                 | 0.05989

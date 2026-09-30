@@ -1,0 +1,61 @@
+{
+  "seed0_sigmoid": {
+    "final_loss": 0.0024749855510890484,
+    "all_correct": true,
+    "gnorm_step0": 0.07657920569181442,
+    "gnorm_early": 0.0167576614767313
+  },
+  "seed0_tanh": {
+    "final_loss": 0.00061756931245327,
+    "all_correct": true,
+    "gnorm_step0": 0.3389878273010254,
+    "gnorm_early": 0.09064027667045593
+  },
+  "seed0_relu": {
+    "final_loss": 0.34662580490112305,
+    "all_correct": false,
+    "gnorm_step0": 0.27049246430397034,
+    "gnorm_early": 0.10950303077697754
+  },
+  "seed27_sigmoid": {
+    "final_loss": 0.003946349956095219,
+    "all_correct": true,
+    "gnorm_step0": 0.008362571708858013,
+    "gnorm_early": 0.002527783624827862
+  },
+  "seed27_tanh": {
+    "final_loss": 0.0006192178116180003,
+    "all_correct": true,
+    "gnorm_step0": 0.04215450584888458,
+    "gnorm_early": 0.026375720277428627
+  },
+  "seed27_relu": {
+    "final_loss": 0.000279594911262393,
+    "all_correct": true,
+    "gnorm_step0": 0.06939379125833511,
+    "gnorm_early": 0.05109476298093796
+  },
+  "aggregate": {
+    "sigmoid": {
+      "success": 30,
+      "n": 40,
+      "median_final_loss": 0.0021373031195253134,
+      "median_g0": 0.021213079802691936,
+      "median_gE": 0.006095439428463578
+    },
+    "tanh": {
+      "success": 15,
+      "n": 40,
+      "median_final_loss": 0.3468373417854309,
+      "median_g0": 0.059816570952534676,
+      "median_gE": 0.04121645539999008
+    },
+    "relu": {
+      "success": 8,
+      "n": 40,
+      "median_final_loss": 0.4773978292942047,
+      "median_g0": 0.09994947537779808,
+      "median_gE": 0.05988548882305622
+    }
+  }
+}

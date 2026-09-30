@@ -1,0 +1,34 @@
+=== Part A: learning check (act=tanh, seed=0, SGD lr=1.0, 5000 full-batch steps) ===
+initial loss : 0.8309
+final loss   : 0.000618
+inputs       : [[0, 0], [0, 1], [1, 0], [1, 1]]
+probabilities: [0.0008, 0.9996, 0.9996, 0.0008]
+labels       : [0, 1, 1, 0]  target: [0, 1, 1, 0]
+all 4 correct: True
+
+=== Part B: gradient of the first layer ===
+W1 (initial)            :
+ tensor([[ 0.6472,  0.2490],
+        [-0.3354,  0.4564]])
+W1.grad = dL/dW1 (mean loss):
+ tensor([[ 0.1392,  0.0222],
+        [-0.2904,  0.1037]])
+average of 4 per-example gradients:
+ tensor([[ 0.1392,  0.0222],
+        [-0.2904,  0.1037]])
+max |mean-loss grad - average of per-example grads| = 0.0
+finite-difference dL/dW1:
+ tensor([[ 0.1392,  0.0222],
+        [-0.2904,  0.1037]], dtype=torch.float64)
+max |autograd - finite diff| = 8.135414564236498e-11
+
+Trained W1:
+ tensor([[3.4159, 3.4150],
+        [4.2095, 4.2047]]) 
+Trained b1: tensor([-5.0334, -2.0302])
+Trained W2: tensor([[-8.0559,  7.9919]])  b2: tensor([-7.4647])
+Hidden activations h = tanh(W1 x + b1) for the 4 inputs:
+ tensor([[-0.9999, -0.9661],
+        [-0.9244,  0.9745],
+        [-0.9243,  0.9747],
+        [ 0.9466,  1.0000]])
