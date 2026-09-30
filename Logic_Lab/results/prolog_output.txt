@@ -1,0 +1,9 @@
+?- animal(polly).        true
+?- can_move(a,b).        true
+?- can_move(a,c).        false
+?- valid_move(a,b).      true
+?- valid_move(b,c).      true
+?- valid_move(a,c).      false
+?- valid_path([a,b,c]).  true
+?- valid_path([a,c]).    false
+?- reduce_speed.         true

@@ -1,0 +1,43 @@
+##### Task 0: applicability in the initial state ['At(Package,A)', 'At(Robot,A)']
+PickUp(Package,A)    applicable: True  (missing: [])
+Drop(Package,C)      applicable: False  (missing: ['At(Robot,C)', 'Holding(Package)'])
+
+##### Task 1: manual plan, replayed by the independent validator
+step 1: PickUp(Package,A) OK -> ['At(Robot,A)', 'Holding(Package)']
+step 2: Move(A,B) OK -> ['At(Robot,B)', 'Holding(Package)']
+step 3: Move(B,C) OK -> ['At(Robot,C)', 'Holding(Package)']
+step 4: Drop(Package,C) OK -> ['At(Package,C)', 'At(Robot,C)']
+goal ['At(Package,C)'] satisfied
+
+##### Test A: original problem, goal ['At(Package,C)']
+S0: ['At(Package,A)', 'At(Robot,A)']
+a1 = PickUp(Package,A)      S1: ['At(Robot,A)', 'Holding(Package)']
+a2 = Move(A,B)              S2: ['At(Robot,B)', 'Holding(Package)']
+a3 = Move(B,C)              S3: ['At(Robot,C)', 'Holding(Package)']
+a4 = Drop(Package,C)        S4: ['At(Package,C)', 'At(Robot,C)']
+step 1: PickUp(Package,A) OK -> ['At(Robot,A)', 'Holding(Package)']
+step 2: Move(A,B) OK -> ['At(Robot,B)', 'Holding(Package)']
+step 3: Move(B,C) OK -> ['At(Robot,C)', 'Holding(Package)']
+step 4: Drop(Package,C) OK -> ['At(Package,C)', 'At(Robot,C)']
+goal ['At(Package,C)'] satisfied
+
+##### Test B: PickUp removed, goal ['At(Package,C)']
+No plan found
+
+##### Test C1: goal At(Robot,C) only
+S0: ['At(Package,A)', 'At(Robot,A)']
+a1 = Move(A,B)              S1: ['At(Package,A)', 'At(Robot,B)']
+a2 = Move(B,C)              S2: ['At(Package,A)', 'At(Robot,C)']
+package still at A: True | package at C: False
+
+##### Test C2: PickUp removed, goal At(Package,C) (robot can still reach C)
+No plan found
+
+##### Extra: example sequence from the lab handout (Move(A,B), PickUp(Package,B), ...)
+step 1: Move(A,B) OK -> ['At(Package,A)', 'At(Robot,B)']
+step 2: PickUp(Package,B) NOT applicable (missing ['At(Package,B)'], forbidden present [])
+
+##### Extra: planner with the precondition check switched off (bug demo)
+S0: ['At(Package,A)', 'At(Robot,A)']
+a1 = Drop(Package,C)        S1: ['At(Package,A)', 'At(Package,C)', 'At(Robot,A)']
+step 1: Drop(Package,C) NOT applicable (missing ['At(Robot,C)', 'Holding(Package)'], forbidden present [])
