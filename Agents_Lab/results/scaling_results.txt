@@ -1,0 +1,6 @@
+k = each original square becomes a k x k block
+k   size      free sq.   BFS len   BFS expanded BFS frontier  A* expanded 
+1   7x21      66         20        59           5             23          
+2   14x42     264        40        237          10            80          
+4   28x84     1056       80        935          20            296         
+8   56x168    4224       160       3723         40            1136        

@@ -1,0 +1,38 @@
+=== 1. Environment ===
+Map: 7 rows x 21 columns
+Start (row, col): (1, 1)  Goal (row, col): (1, 19)
+#####################
+#S....#............G#
+#.##....##########..#
+#....##.............#
+#.######.###.#.###..#
+#........#..........#
+#####################
+
+=== 2. Search algorithm ===
+Breadth-first search (BFS). Every move costs one square, so BFS
+returns a path with the fewest moves, and its visited set stops loops.
+
+=== 3. Result on the lab map ===
+Plan (20 moves): Right Right Right Down Right Right Right Up Right Right Right Right Right Right Right Right Right Right Right Right
+Path as (row, col): [(1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (2, 5), (2, 6), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (1, 16), (1, 17), (1, 18), (1, 19)]
+#####################
+#S***.#************G#
+#.##****##########..#
+#....##.............#
+#.######.###.#.###..#
+#........#..........#
+#####################
+Agent finished at (1, 19) - goal reached: True
+Nodes expanded: 59  Largest frontier: 5
+
+=== 4. Goal walled in (no path) ===
+#####################
+#S....#...........#G#
+#.##....##########.##
+#....##.............#
+#.######.###.#.###..#
+#........#..........#
+#####################
+No path exists from S to G.
+Nodes expanded before giving up: 63

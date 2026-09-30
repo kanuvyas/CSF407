@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="Arial, sans-serif" font-size="14">
+  <defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+  <rect width="760" height="420" fill="white"/>
+  <text x="380" y="26" text-anchor="middle" font-size="17" font-weight="bold">Goal-based warehouse agent</text>
+  <rect x="40" y="50" width="470" height="340" rx="10" fill="#f6f8fb" stroke="#333" stroke-width="2"/>
+  <text x="60" y="76" font-weight="bold">AGENT (warehouse vehicle)</text>
+  <rect x="70" y="95" width="190" height="60" rx="6" fill="#fff" stroke="#333"/>
+  <text x="165" y="120" text-anchor="middle">Current state</text>
+  <text x="165" y="140" text-anchor="middle" font-size="12">my (row, col) on the grid</text>
+  <rect x="290" y="95" width="190" height="60" rx="6" fill="#fff" stroke="#333"/>
+  <text x="385" y="120" text-anchor="middle">Goal</text>
+  <text x="385" y="140" text-anchor="middle" font-size="12">reach the G square</text>
+  <rect x="70" y="195" width="410" height="80" rx="6" fill="#fff4d6" stroke="#333"/>
+  <text x="275" y="222" text-anchor="middle" font-weight="bold">Decision making: BFS planner</text>
+  <text x="275" y="244" text-anchor="middle" font-size="12">try Up, Down, Left, Right; skip walls and visited squares;</text>
+  <text x="275" y="262" text-anchor="middle" font-size="12">stop at goal test; return shortest list of moves</text>
+  <rect x="70" y="315" width="410" height="55" rx="6" fill="#fff" stroke="#333"/>
+  <text x="275" y="340" text-anchor="middle">Available actions</text>
+  <text x="275" y="358" text-anchor="middle" font-size="12">Up, Down, Left, Right (one square each)</text>
+  <line x1="165" y1="155" x2="165" y2="193" stroke="#333" marker-end="url(#a)"/>
+  <line x1="385" y1="155" x2="385" y2="193" stroke="#333" marker-end="url(#a)"/>
+  <line x1="275" y1="275" x2="275" y2="313" stroke="#333" marker-end="url(#a)"/>
+  <rect x="560" y="95" width="170" height="275" rx="10" fill="#e9f5e9" stroke="#333" stroke-width="2"/>
+  <text x="645" y="125" text-anchor="middle" font-weight="bold">ENVIRONMENT</text>
+  <text x="645" y="152" text-anchor="middle" font-size="12">7 x 21 warehouse grid</text>
+  <text x="645" y="172" text-anchor="middle" font-size="12">'#' shelving (blocked)</text>
+  <text x="645" y="192" text-anchor="middle" font-size="12">'.' free space</text>
+  <text x="645" y="212" text-anchor="middle" font-size="12">S start, G goal</text>
+  <path d="M560,150 L520,150 L520,125 L482,125" fill="none" stroke="#333" marker-end="url(#a)"/>
+  <text x="540" y="108" text-anchor="middle" font-size="12">percept: map</text>
+  <text x="540" y="121" text-anchor="middle" font-size="12">+ position</text>
+  <path d="M482,342 L535,342 L535,300 L558,300" fill="none" stroke="#333" marker-end="url(#a)"/>
+  <text x="648" y="330" text-anchor="middle" font-size="12">action: move one</text>
+  <text x="648" y="346" text-anchor="middle" font-size="12">square; position</text>
+  <text x="648" y="362" text-anchor="middle" font-size="12">changes</text>
+</svg>

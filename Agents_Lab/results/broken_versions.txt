@@ -1,0 +1,7 @@
+planner                      caught?  kinds of problem found
+real agent                   -        none (good)
+walks_through_walls          YES      invalid plan; returned a plan for an unreachable goal
+no_visited_set               YES      found no plan although one exists
+swapped_up_down              YES      invalid plan; plan does not end at G
+empty_plan_when_unreachable  YES      returned a plan for an unreachable goal
+depth_first                  YES      plan is not shortest

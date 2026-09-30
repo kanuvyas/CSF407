@@ -1,0 +1,24 @@
+test_every_broken_version_is_caught (test_agent.TestBrokenVersionsAreCaught.test_every_broken_version_is_caught) ... ok
+test_real_agent_has_no_problems (test_agent.TestBrokenVersionsAreCaught.test_real_agent_has_no_problems) ... ok
+test_already_at_goal_gives_empty_plan (test_agent.TestEdgeCases.test_already_at_goal_gives_empty_plan) ... ok
+test_bad_maps_are_rejected (test_agent.TestEdgeCases.test_bad_maps_are_rejected) ... ok
+test_goal_walled_in_gives_none (test_agent.TestEdgeCases.test_goal_walled_in_gives_none) ... ok
+test_open_map_without_border_stays_inside_grid (test_agent.TestEdgeCases.test_open_map_without_border_stays_inside_grid) ... ok
+test_single_corridor_forces_route (test_agent.TestEdgeCases.test_single_corridor_forces_route) ... ok
+test_start_is_goal_neighbour (test_agent.TestEdgeCases.test_start_is_goal_neighbour) ... ok
+test_deterministic (test_agent.TestLabMap.test_deterministic) ... ok
+test_draw_path_marks_only_free_squares (test_agent.TestLabMap.test_draw_path_marks_only_free_squares) ... ok
+test_exactly_two_shortest_paths_and_agent_picks_one (test_agent.TestLabMap.test_exactly_two_shortest_paths_and_agent_picks_one) ... ok
+test_execute_ends_at_goal (test_agent.TestLabMap.test_execute_ends_at_goal) ... ok
+test_execute_rejects_a_collision (test_agent.TestLabMap.test_execute_rejects_a_collision) ... ok
+test_length_is_hand_computed_20 (test_agent.TestLabMap.test_length_is_hand_computed_20) ... ok
+test_length_matches_independent_distance (test_agent.TestLabMap.test_length_matches_independent_distance) ... ok
+test_no_square_visited_twice (test_agent.TestLabMap.test_no_square_visited_twice) ... ok
+test_plan_is_collision_free_and_reaches_goal (test_agent.TestLabMap.test_plan_is_collision_free_and_reaches_goal) ... ok
+test_random_maps_match_reference (test_agent.TestProperties.test_random_maps_match_reference) ... ok
+test_scaled_maps_length_grows_linearly (test_agent.TestProperties.test_scaled_maps_length_grows_linearly) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests
+
+OK
