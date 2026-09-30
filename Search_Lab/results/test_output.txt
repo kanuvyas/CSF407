@@ -1,0 +1,25 @@
+test_all_checks_pass_for_real_astar (test_search.TestAStar.test_all_checks_pass_for_real_astar) ... ok
+test_astar_no_more_expansions_than_bfs_on_warehouse (test_search.TestAStar.test_astar_no_more_expansions_than_bfs_on_warehouse) ... ok
+test_bfs_passes_same_checks (test_search.TestAStar.test_bfs_passes_same_checks) ... ok
+test_manhattan_never_reopens (test_search.TestAStar.test_manhattan_never_reopens)
+Manhattan is consistent, so no state should be expanded twice. ... ok
+test_no_solution_terminates_with_failure (test_search.TestAStar.test_no_solution_terminates_with_failure) ... ok
+test_open_room_many_paths_still_shortest (test_search.TestAStar.test_open_room_many_paths_still_shortest) ... ok
+test_optimal_heuristics_agree_with_bfs (test_search.TestAStar.test_optimal_heuristics_agree_with_bfs) ... ok
+test_scaled_heuristic_is_suboptimal_on_trap_map (test_search.TestAStar.test_scaled_heuristic_is_suboptimal_on_trap_map)
+Documents the Task 6 finding: 2 x Manhattan returns 8 moves, not 6. ... ok
+test_start_equals_goal_cost_zero (test_search.TestAStar.test_start_equals_goal_cost_zero) ... ok
+test_trivial_path_exact (test_search.TestAStar.test_trivial_path_exact) ... ok
+test_each_bug_is_detected (test_search.TestBrokenVersionsAreCaught.test_each_bug_is_detected) ... ok
+test_reference_is_clean (test_search.TestBrokenVersionsAreCaught.test_reference_is_clean) ... ok
+test_admissibility (test_search.TestHeuristics.test_admissibility)
+h(n) <= true remaining cost for Manhattan and Euclidean; 2x Manhattan must ... ok
+test_bad_maps_rejected (test_search.TestProblem.test_bad_maps_rejected) ... ok
+test_edge_of_map_is_not_free (test_search.TestProblem.test_edge_of_map_is_not_free) ... ok
+test_parse_positions (test_search.TestProblem.test_parse_positions) ... ok
+test_valid_actions_at_start (test_search.TestProblem.test_valid_actions_at_start) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.277s
+
+OK

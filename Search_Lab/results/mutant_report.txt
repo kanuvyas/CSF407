@@ -1,0 +1,6 @@
+real A*          : 0 failed checks
+no_closed_set    : 49 failed checks; first: warehouse: expected cost 40, got None
+ignore_g         : 4 failed checks; first: warehouse: expected cost 40, got 48
+overestimate     : 1 failed checks; first: heuristic trap: expected cost 6, got 8
+through_walls    : 153 failed checks; first: warehouse: expected cost 40, got 20
+off_by_one       : 255 failed checks; first: warehouse: expected cost 40, got 41

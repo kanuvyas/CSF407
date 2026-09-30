@@ -1,0 +1,205 @@
+=== Section 0/1: the warehouse problem ===
+map size 9 x 17, start (1, 1), goal (7, 15), free cells (incl. S,G): 64
+valid actions from S: Down, Right
+
+=== Section 3: Tests 1-4 (A*, Manhattan) ===
+--- Test 1: original warehouse ---
+[test1_warehouse]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 65)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+  map with path:
+    #################
+    #S****#*********#
+    #.###*#*#######*#
+    #...#*#*******#*#
+    ###.#*#######*#*#
+    #...#*********#*#
+    #.###########.#*#
+    #.............#G#
+    #################
+
+--- Test 2: trivial (goal adjacent) ---
+[test2_trivial]
+  solution found : True
+  path length    : 1
+  states expanded: 2 (distinct: 2, generated: 2)
+  path (row,col) : [(1, 1), (1, 2)]
+  map with path:
+    #####
+    #SG##
+    #####
+
+--- Test 3: no solution ---
+[test3_no_solution]
+  solution found : False
+  path length    : None
+  states expanded: 9 (distinct: 9, generated: 9)
+
+--- Test 4a: alternative paths (top = 4 moves, bottom = 8 moves) ---
+[test4a_alternative]
+  solution found : True
+  path length    : 4
+  states expanded: 5 (distinct: 5, generated: 6)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5)]
+  map with path:
+    #######
+    #S***G#
+    #.###.#
+    #.....#
+    #######
+  BFS shortest length on this map: 4
+
+--- Test 4b: open room, many equal shortest paths ---
+[test4b_open_room]
+  solution found : True
+  path length    : 4
+  states expanded: 5 (distinct: 5, generated: 7)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (3, 2), (3, 3)]
+  map with path:
+    #####
+    #S..#
+    #*..#
+    #**G#
+    #####
+  BFS shortest length on this map: 4
+
+=== Section 5: BFS vs A* on the warehouse ===
+[task5_bfs]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 64)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+  map with path:
+    #################
+    #S****#*********#
+    #.###*#*#######*#
+    #...#*#*******#*#
+    ###.#*#######*#*#
+    #...#*********#*#
+    #.###########.#*#
+    #.............#G#
+    #################
+[task5_astar]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 65)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+
+=== Section 6: heuristic investigation (A*, same warehouse) ===
+[task6_h = 0]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 64)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+[task6_Manhattan]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 65)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+[task6_Euclidean]
+  solution found : True
+  path length    : 40
+  states expanded: 64 (distinct: 64, generated: 65)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+[task6_2 x Manhattan]
+  solution found : True
+  path length    : 40
+  states expanded: 68 (distinct: 64, generated: 69)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+[task6_5 x Manhattan (extra)]
+  solution found : True
+  path length    : 40
+  states expanded: 84 (distinct: 64, generated: 86)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (4, 13), (3, 13), (3, 12), (3, 11), (3, 10), (3, 9), (3, 8), (3, 7), (2, 7), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (2, 15), (3, 15), (4, 15), (5, 15), (6, 15), (7, 15)]
+  map with path:
+    #################
+    #S****#*********#
+    #.###*#*#######*#
+    #...#*#*******#*#
+    ###.#*#######*#*#
+    #...#*********#*#
+    #.###########.#*#
+    #.............#G#
+    #################
+
+=== Section 6b: heuristics on the small trap map (extra) ===
+[trap_bfs]
+  solution found : True
+  path length    : 6
+  states expanded: 12 (distinct: 12, generated: 12)
+  path (row,col) : [(3, 1), (3, 2), (3, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+[trap_h = 0]
+  solution found : True
+  path length    : 6
+  states expanded: 12 (distinct: 12, generated: 12)
+  path (row,col) : [(3, 1), (3, 2), (3, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+[trap_Manhattan]
+  solution found : True
+  path length    : 6
+  states expanded: 11 (distinct: 11, generated: 13)
+  path (row,col) : [(3, 1), (3, 2), (3, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+[trap_Euclidean]
+  solution found : True
+  path length    : 6
+  states expanded: 9 (distinct: 9, generated: 11)
+  path (row,col) : [(3, 1), (3, 2), (3, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+[trap_2 x Manhattan]
+  solution found : True
+  path length    : 8
+  states expanded: 9 (distinct: 9, generated: 12)
+  path (row,col) : [(3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+  map with path:
+    #######
+    #***#G#
+    #*#***#
+    #S...##
+    #######
+[trap_5 x Manhattan (extra)]
+  solution found : True
+  path length    : 8
+  states expanded: 9 (distinct: 9, generated: 12)
+  path (row,col) : [(3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (2, 3), (2, 4), (2, 5), (1, 5)]
+
+=== Extra: open warehouse (not in the handout) ===
+[extra_open_bfs]
+  solution found : True
+  path length    : 20
+  states expanded: 89 (distinct: 89, generated: 89)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15)]
+  map with path:
+    #################
+    #S..............#
+    #*.###....###...#
+    #*.#........#...#
+    #*.#........#...#
+    #*.###....###...#
+    #*..............#
+    #**************G#
+    #################
+[extra_open_astar_h = 0]
+  solution found : True
+  path length    : 20
+  states expanded: 89 (distinct: 89, generated: 89)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15)]
+[extra_open_astar_Manhattan]
+  solution found : True
+  path length    : 20
+  states expanded: 21 (distinct: 21, generated: 39)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15)]
+[extra_open_astar_Euclidean]
+  solution found : True
+  path length    : 20
+  states expanded: 68 (distinct: 68, generated: 89)
+  path (row,col) : [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (2, 13), (3, 13), (4, 13), (5, 13), (6, 13), (6, 14), (7, 14), (7, 15)]
+[extra_open_astar_2 x Manhattan]
+  solution found : True
+  path length    : 20
+  states expanded: 21 (distinct: 21, generated: 39)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15)]
+[extra_open_astar_5 x Manhattan (extra)]
+  solution found : True
+  path length    : 20
+  states expanded: 21 (distinct: 21, generated: 39)
+  path (row,col) : [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15)]
